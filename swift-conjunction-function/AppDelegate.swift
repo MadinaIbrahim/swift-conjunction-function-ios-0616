@@ -9,16 +9,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let sandBox = Sandbox()
         
-        /*
-
-        * Call your function here!
-
-        */
+        let testConjunction = sandBox.listWithElements(["one", "two"], conjunction: "&")
+        print("test conjunction: \(testConjunction) (blank is valid)")
         
-        // do not alter
-        return true //
-    }   /////////////
-}       ////////////
+        let greaterThanThreeElement = sandBox.listWithElements(["one", "two", "three", "four", "five"], conjunction: "or")
+        print(greaterThanThreeElement)
+        //one,two,three,four, or five
+        
+        let twoElements = sandBox.listWithElements(["hi","madina"], conjunction: "and")
+        print(twoElements)
+        //hi and madina
+        
+        let oneElement = sandBox.listWithElements(["hi"], conjunction: nil)
+        print(oneElement)
+        //hi
+        
+        return true
+    }
+}
 

@@ -1,0 +1,6 @@
+framework module Pods_swift_conjunction_function {
+  umbrella header "Pods-swift-conjunction-function-umbrella.h"
+
+  export *
+  module * { export * }
+}
